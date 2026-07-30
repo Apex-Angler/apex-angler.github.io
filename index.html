@@ -3,25 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Website</title>
+    <title>Apex Angler</title>
     <style>
+        /* Base Page Styles */
         body {
-            font-family: system-ui, sans-serif;
-            max-width: 600px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1c1e; /* Dark stealth background */
+            color: #f0f2f5; /* Off-white readable text */
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #0d1117;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #0366d6;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0366d6;
+        }
+        .nav-links a {
+            color: #f0f2f5;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #0366d6;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
-            background-color: #f9f9f9;
-            color: #333;
+        }
+
+        /* Styled Content Card */
+        .card {
+            background-color: #24292e;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-left: 5px solid #0366d6;
         }
         h1 {
-            color: #0366d6;
+            margin-top: 0;
+            color: #ffffff;
+        }
+        p {
+            line-height: 1.6;
+            color: #c9d1d9;
         }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to My Website!</h1>
-    <p>This site is successfully hosted for free using GitHub Pages.</p>
+    <!-- Navigation Header -->
+    <nav>
+        <div class="logo">Apex Angler</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- Page Body -->
+    <div class="container">
+        <div class="card">
+            <h1>Welcome to Apex Angler</h1>
+            <p>This website is successfully customized and hosted live on GitHub Pages. Edit this paragraph to introduce your project, display your fishing logs, or showcase your portfolio.</p>
+        </div>
+    </div>
 
 </body>
 </html>
