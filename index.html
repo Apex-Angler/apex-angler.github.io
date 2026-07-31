@@ -247,6 +247,11 @@
     <script>
         const correctPassword = "Fishing=awesome"; 
 
+        // Automatically hide lock screen if user has logged in during this browser session
+        if (sessionStorage.getItem("loggedIn") === "true") {
+            document.getElementById("passwordOverlay").style.display = "none";
+        }
+
         function togglePasswordVisibility() {
             const inputField = document.getElementById("passInput");
             const eyeIcon = document.getElementById("eyeIcon");
@@ -266,6 +271,7 @@
             const overlay = document.getElementById("passwordOverlay");
 
             if (userInput === correctPassword) {
+                sessionStorage.setItem("loggedIn", "true"); // Remembers the login status
                 overlay.style.display = "none";
             } else {
                 errorDiv.style.display = "block";
