@@ -37,7 +37,7 @@
         }
         .container {
             max-width: 900px;
-            margin: 60px auto;
+            margin: 80px auto;
             padding: 0 20px;
         }
         .card {
@@ -46,41 +46,39 @@
             border-radius: 12px;
             text-align: center;
             border: 2px solid #00f0ff; 
-            box-shadow: 0 0 15px #00f0ff, 0 0 30px rgba(0, 240, 255, 0.2);
+            box-shadow: 0 0 15px #00f0ff, 
+                        0 0 30px rgba(0, 240, 255, 0.2), 
+                        inset 0 0 15px rgba(0, 240, 255, 0.1);
         }
         h1 {
-            margin: 0 0 20px 0;
+            margin: 0;
             color: #ffffff;
             font-size: 32px;
-        }
-        p {
-            color: #8b949e;
-            font-size: 16px;
-            line-height: 1.6;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
 
-        /* Sleek Placeholder Screen Box */
-        .game-placeholder {
+        /* Responsive Arcade Game Window Container */
+        .arcade-container {
+            position: relative;
             width: 100%;
             max-width: 640px;
-            height: 350px;
+            height: 480px;
             margin: 30px auto 0 auto;
-            background-color: #0d1117;
-            border: 2px dashed #30363d;
             border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
+            overflow: hidden;
+            border: 2px solid #0366d6;
+            box-shadow: 0 0 15px rgba(3, 102, 214, 0.5);
+            background-color: #000;
+        }
+        
+        .arcade-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
-        .game-placeholder svg {
-            color: #484f58;
-            margin-bottom: 15px;
-        }
-
-        /* Offline Link Button element formatting styling */
+        /* Offline Link Button element styling */
         .offline-btn {
             margin-top: 30px;
             background-color: #21262d;
@@ -93,7 +91,7 @@
             cursor: pointer;
             transition: all 0.2s ease;
             display: inline-block;
-            text-decoration: none; /* Removes link underline */
+            text-decoration: none;
         }
 
         .offline-btn:hover {
@@ -118,26 +116,22 @@
     <!-- Page Body -->
     <div class="container">
         <div class="card">
-            <h1>Games Portal</h1>
-            <p>Welcome to the Arcade Zone. Custom game integration scripts can be securely embedded directly into this module layout frame.</p>
+            <h1>Arcade Station</h1>
             
-            <!-- DISPLAY PANEL -->
-            <div class="game-placeholder">
-                <svg xmlns="http://w3.org" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-                    <path d="M6 12h4m-2-2v4m7-2h.01m2.99 0h.01"></path>
-                </svg>
-                <p style="margin:0; font-weight: 500;">Console Ready</p>
+            <!-- EMBEDDED RETRO ARCADE WINDOW RESTORED -->
+            <div class="arcade-container">
+                <iframe src="https://github.io" title="Arcade Game"></iframe>
             </div>
 
-            <!-- OFFLINE LINK BUTTON ELEMENT POINTING TO NEW PAGE -->
-            <a href="offline.html" class="offline-btn">Offline</a>
+            <!-- OFFLINE LINK BUTTON ELEMENT -->
+            <div>
+                <a href="offline.html" class="offline-btn">Offline</a>
+            </div>
             
         </div>
     </div>
 
     <script>
-        // Security verification check session fallback
         if (sessionStorage.getItem("loggedIn") !== "true") {
             window.location.href = "index.html";
         }
