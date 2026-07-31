@@ -73,5 +73,12 @@
         </div>
     </div>
 
+    <script>
+        // Security fallback: Redirects back to homepage if trying to bypass directly without inputting password
+        if (sessionStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+
 </body>
 </html>
