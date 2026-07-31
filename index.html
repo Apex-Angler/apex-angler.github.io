@@ -64,33 +64,34 @@
             font-size: 32px;
             letter-spacing: 0.5px;
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-            margin-bottom: 30px;
+            margin-bottom: 30px; /* Pushes the button cleanly below the text */
         }
 
         /* Clickable Link Styling for Image Button */
         .image-link-btn {
-            background: none;
+            background-color: #ffffff; /* Gives the black speaker icon a clean white background container */
             border: 2px solid #0366d6;
-            padding: 10px;
-            border-radius: 8px;
+            padding: 15px;
+            border-radius: 50%; /* Makes the button perfectly circular */
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            display: inline-block;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
             text-decoration: none;
         }
 
         .image-link-btn img {
-            max-width: 250px; /* Adjust size of your button image */
-            height: auto;
+            width: 80px; /* Perfect size for a dashboard sound icon */
+            height: 80px;
             display: block;
-            border-radius: 4px;
         }
 
         .image-link-btn:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
             border-color: #00f0ff;
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.8);
         }
 
         /* Fullscreen Password Overlay Screen */
@@ -222,10 +223,9 @@
         <div class="card">
             <h1>Welcome to the Apex Files</h1>
             
-            <!-- IMAGE LINK BUTTON POINTING TO SOUNDBOARD -->
-            <!-- Remember to replace 'button-image.png' with your uploaded image file name -->
+            <!-- SPEAKER BUTTON LINK POINTING TO SOUNDBOARD -->
             <a href="soundboard.html" class="image-link-btn">
-                <img src="button-image.png" alt="Go to Sound Board">
+                <img src="speaker.png" alt="Go to Sound Board">
             </a>
             
         </div>
