@@ -71,21 +71,21 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
 
-        /* Button Grid Container positioned beneath the welcome box */
+        /* Interactive Dashboard Grid Row */
         .button-area {
             margin-top: 40px; 
             display: flex;
-            gap: 30px; /* Space between the two icons */
+            gap: 40px; /* Uniform spaces between both icons */
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* Clickable Link Styling for Dashboard Circular Buttons */
+        /* Clickable Link Styling for Circular Panel Buttons */
         .image-link-btn {
-            background-color: #ffffff; 
+            background-color: #ffffff; /* Clean base color framing */
             border: 2px solid #0366d6;
             padding: 15px;
-            border-radius: 50%; /* Perfect circle */
+            border-radius: 50%; /* Converts button frames to perfect circles */
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -99,7 +99,7 @@
             width: 80px; 
             height: 80px;
             display: block;
-            border-radius: 50%; /* Keeps the images fitted properly inside the circle */
+            border-radius: 50%; /* Keeps custom asset images fitted correctly within the circle profile */
             object-fit: cover;
         }
 
@@ -240,15 +240,15 @@
             <h1>Welcome to the Apex Files</h1>
         </div>
         
-        <!-- BUTTON AREA -->
+        <!-- TWO ICON PORTALS SIDE-BY-SIDE BENEATH MAIN CONTAINER -->
         <div class="button-area">
-            <!-- Sound Board Link -->
-            <a href="soundboard.html" class="image-link-btn">
+            <!-- Sound Board Link Portal -->
+            <a href="soundboard.html" class="image-link-btn" title="Sound Board">
                 <img src="speaker.png" alt="Go to Sound Board">
             </a>
 
-            <!-- NEW Games Link -->
-            <a href="games.html" class="image-link-btn">
+            <!-- Games Link Portal -->
+            <a href="games.html" class="image-link-btn" title="Games Portal">
                 <img src="controller.png" alt="Go to Games">
             </a>
         </div>
@@ -258,6 +258,7 @@
     <script>
         const correctPassword = "Fishing=awesome"; 
 
+        // Automatically bypass lock screen grid if verification check was already solved this session
         if (sessionStorage.getItem("loggedIn") === "true") {
             document.getElementById("passwordOverlay").style.display = "none";
         }
@@ -281,7 +282,7 @@
             const overlay = document.getElementById("passwordOverlay");
 
             if (userInput === correctPassword) {
-                sessionStorage.setItem("loggedIn", "true");
+                sessionStorage.setItem("loggedIn", "true"); // Stores persistent state key
                 overlay.style.display = "none";
             } else {
                 errorDiv.style.display = "block";
