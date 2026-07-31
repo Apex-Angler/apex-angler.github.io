@@ -37,7 +37,7 @@
         }
         .container {
             max-width: 900px;
-            margin: 120px auto; /* Centers the box nicely on the screen */
+            margin: 120px auto;
             padding: 0 20px;
         }
         .card {
@@ -51,14 +51,22 @@
                         inset 0 0 15px rgba(0, 240, 255, 0.1);
         }
         h1 {
-            margin: 0 0 30px 0; /* Creates clean space above the button */
+            margin: 0 0 30px 0;
             color: #ffffff;
             font-size: 36px;
             letter-spacing: 0.5px;
         }
 
-        /* Offline Link Button element styling */
-        .offline-btn {
+        /* Flex container keeping the action tiles in alignment row */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between buttons */
+            flex-wrap: wrap;
+        }
+
+        /* Unified Custom Menu Buttons formatting styling */
+        .action-btn {
             background-color: #21262d;
             color: #c9d1d9;
             border: 1px solid #30363d;
@@ -70,9 +78,10 @@
             transition: all 0.2s ease;
             display: inline-block;
             text-decoration: none;
+            min-width: 80px;
         }
 
-        .offline-btn:hover {
+        .action-btn:hover {
             background-color: #30363d;
             color: #ffffff;
             border-color: #8b949e;
@@ -94,19 +103,18 @@
     <!-- Page Body -->
     <div class="container">
         <div class="card">
-            <!-- Cleaned Title -->
             <h1>Games</h1>
 
-            <!-- OFFLINE LINK BUTTON ELEMENT PLACED DIRECTLY BELOW -->
-            <div>
-                <a href="offline.html" class="offline-btn">Offline</a>
+            <!-- SIDE-BY-SIDE BUTTON ROW PANEL -->
+            <div class="btn-group">
+                <a href="online.html" class="action-btn">Online</a>
+                <a href="offline.html" class="action-btn">Offline</a>
             </div>
             
         </div>
     </div>
 
     <script>
-        // Security verification check session fallback
         if (sessionStorage.getItem("loggedIn") !== "true") {
             window.location.href = "index.html";
         }
