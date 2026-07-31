@@ -71,15 +71,18 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
 
-        /* Button Container positioned beneath the welcome box */
+        /* Button Grid Container positioned beneath the welcome box */
         .button-area {
             margin-top: 40px; 
-            text-align: center;
+            display: flex;
+            gap: 30px; /* Space between the two icons */
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        /* Clickable Link Styling for Speaker Button */
+        /* Clickable Link Styling for Dashboard Circular Buttons */
         .image-link-btn {
-            background-color: #ffffff; /* Clean white background container */
+            background-color: #ffffff; 
             border: 2px solid #0366d6;
             padding: 15px;
             border-radius: 50%; /* Perfect circle */
@@ -96,6 +99,8 @@
             width: 80px; 
             height: 80px;
             display: block;
+            border-radius: 50%; /* Keeps the images fitted properly inside the circle */
+            object-fit: cover;
         }
 
         .image-link-btn:hover {
@@ -235,10 +240,16 @@
             <h1>Welcome to the Apex Files</h1>
         </div>
         
-        <!-- BUTTON OUTSIDE AND BENEATH THE WELCOME BOX -->
+        <!-- BUTTON AREA -->
         <div class="button-area">
+            <!-- Sound Board Link -->
             <a href="soundboard.html" class="image-link-btn">
                 <img src="speaker.png" alt="Go to Sound Board">
+            </a>
+
+            <!-- NEW Games Link -->
+            <a href="games.html" class="image-link-btn">
+                <img src="controller.png" alt="Go to Games">
             </a>
         </div>
     </div>
@@ -247,7 +258,6 @@
     <script>
         const correctPassword = "Fishing=awesome"; 
 
-        // Automatically hide lock screen if user has logged in during this browser session
         if (sessionStorage.getItem("loggedIn") === "true") {
             document.getElementById("passwordOverlay").style.display = "none";
         }
@@ -271,7 +281,7 @@
             const overlay = document.getElementById("passwordOverlay");
 
             if (userInput === correctPassword) {
-                sessionStorage.setItem("loggedIn", "true"); // Remembers the login status
+                sessionStorage.setItem("loggedIn", "true");
                 overlay.style.display = "none";
             } else {
                 errorDiv.style.display = "block";
