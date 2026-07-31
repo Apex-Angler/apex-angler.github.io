@@ -258,7 +258,6 @@
     <script>
         const correctPassword = "Fishing=awesome"; 
 
-        // Automatically bypass lock screen grid if verification check was already solved this session
         if (sessionStorage.getItem("loggedIn") === "true") {
             document.getElementById("passwordOverlay").style.display = "none";
         }
@@ -282,7 +281,7 @@
             const overlay = document.getElementById("passwordOverlay");
 
             if (userInput === correctPassword) {
-                sessionStorage.setItem("loggedIn", "true"); // Stores persistent state key
+                sessionStorage.setItem("loggedIn", "true");
                 overlay.style.display = "none";
             } else {
                 errorDiv.style.display = "block";
