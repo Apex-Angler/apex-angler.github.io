@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Changed the text back to Education Perfect for your browser tab -->
     <title>Education Perfect</title>
-    
     <link rel="icon" type="image/png" href="Screenshot%202026-07-31%20080025.png">
     <style>
         /* Base Page Styles */
@@ -68,11 +65,126 @@
             letter-spacing: 0.5px;
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
+
+        /* Fullscreen Password Overlay Screen */
+        #passwordOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #131416;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .login-box {
+            background-color: #24292e;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            text-align: center;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .login-box h2 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        /* Container keeping password field and eye toggle unified */
+        .password-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .password-container input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .password-container input:focus {
+            border-color: #0366d6;
+        }
+
+        /* SVG Eye Icon Styling */
+        .eye-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            color: #8b949e;
+            display: flex;
+            align-items: center;
+        }
+
+        .eye-toggle:hover {
+            color: #ffffff;
+        }
+
+        .login-btn {
+            background-color: #238636;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .login-btn:hover {
+            background-color: #2ea043;
+        }
+
+        .error-msg {
+            color: #f85149;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- Lockout Screen Layer -->
+    <div id="passwordOverlay">
+        <div class="login-box">
+            <h2>Access Required</h2>
+            <div class="password-container">
+                <input type="password" id="passInput" placeholder="Enter password...">
+                <button class="eye-toggle" id="toggleEye" onclick="togglePasswordVisibility()">
+                    <!-- SVG Eye Open Icon Shape -->
+                    <svg id="eyeIcon" xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+            <button class="login-btn" onclick="checkWebsitePassword()">Submit</button>
+            <div class="error-msg" id="errorDiv">Incorrect password. Access denied.</div>
+        </div>
+    </div>
+
+    <!-- Navigation Header (Hidden behind layout until password unlock) -->
     <nav>
         <div class="logo">Apex Files</div>
         <div class="nav-links">
@@ -89,14 +201,46 @@
         </div>
     </div>
 
-    <!-- Password Script -->
+    <!-- Secure UI Script Logic -->
     <script>
-        const password = "Fishing=awesome"; 
-        let entry = prompt("Please enter the password to access the Apex Files:");
-        if (entry !== password) {
-            alert("Incorrect password. Access denied.");
-            document.body.innerHTML = "<h1 style='color:white; text-align:center; margin-top:50px;'>Access Denied</h1>";
+        const correctPassword = "Fishing=awesome"; 
+
+        // Toggles visibility between small password dots and plain readable text
+        function togglePasswordVisibility() {
+            const inputField = document.getElementById("passInput");
+            const eyeIcon = document.getElementById("eyeIcon");
+            
+            if (inputField.type === "password") {
+                inputField.type = "text";
+                // Changes icon path configuration to an Eye-Off look (strikes through eye)
+                eyeIcon.innerHTML = '<line x1="1" y1="1" x2="23" y2="23"></line><path d="M9 9a3 3 0 1 1 6 6"></path><path d="M17.06 17.06A8.5 8.5 0 0 1 12 19c-7 0-11-8-11-8a18.5 18.5 0 0 1 2.16-3.19m3.72-3.72A18.5 18.5 0 0 1 12 5c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"></path>';
+            } else {
+                inputField.type = "password";
+                // Changes icon back to a standard wide-open eye shape
+                eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
+            }
         }
+
+        // Checks submitted entry and removes the lockout screen overlay on success
+        function checkWebsitePassword() {
+            const userInput = document.getElementById("passInput").value;
+            const errorDiv = document.getElementById("errorDiv");
+            const overlay = document.getElementById("passwordOverlay");
+
+            if (userInput === correctPassword) {
+                overlay.style.display = "none"; // Removes the entire screen gate overlay frame
+            } else {
+                errorDiv.style.display = "block"; // Visually triggers red alert text panel
+                document.getElementById("passInput").value = ""; // Flushes field input clear
+            }
+        }
+
+        // Allows hitting the 'Enter' key on a keyboard to submit password seamlessly
+        document.getElementById("passInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                checkWebsitePassword();
+            }
+        });
     </script>
 
 </body>
