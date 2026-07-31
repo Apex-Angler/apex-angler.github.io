@@ -36,30 +36,30 @@
             color: #0366d6;
         }
         .container {
-            max-width: 950px;
-            margin: 30px auto;
+            max-width: 900px;
+            margin: 40px auto;
             padding: 0 20px;
         }
         .card {
             background-color: #24292e;
-            padding: 35px 20px;
+            padding: 40px 20px;
             border-radius: 12px;
             text-align: center;
             border: 2px solid #00f0ff; 
             box-shadow: 0 0 15px #00f0ff, 0 0 30px rgba(0, 240, 255, 0.2);
         }
         h1 {
-            margin: 0 0 25px 0;
+            margin: 0 0 30px 0;
             color: #ffffff;
             font-size: 32px;
         }
         
-        /* Optimized Game Container frame for PolyTrack Controls */
+        /* Responsive Arcade Game Window Container */
         .arcade-container {
             position: relative;
             width: 100%;
-            max-width: 850px;
-            height: 580px;
+            max-width: 640px;
+            height: 480px;
             margin: 0 auto;
             border-radius: 8px;
             overflow: hidden;
@@ -89,18 +89,18 @@
     <!-- Page Body -->
     <div class="container">
         <div class="card">
-            <h1>PolyTrack Racing Station</h1>
+            <h1>Arcade Station</h1>
             
-            <!-- Embedded Clean Unblocked PolyTrack Engine Mirror -->
+            <!-- EMBEDDED RETRO ARCADE WINDOW -->
             <div class="arcade-container">
-                <iframe src="https://polytrackfree.github.io/" title="PolyTrack Unblocked Game" allow="fullscreen"></iframe>
+                <iframe src="https://github.io" title="Arcade Game"></iframe>
             </div>
             
         </div>
     </div>
 
     <script>
-        // Security verification check session fallback
+        // Security verification checker session fallback
         if (sessionStorage.getItem("loggedIn") !== "true") {
             window.location.href = "index.html";
         }
