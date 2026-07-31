@@ -44,14 +44,19 @@
             max-width: 900px;
             margin: 80px auto;
             padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers everything down the page */
         }
 
-        /* Centered Content Card with Neon Blue Glow */
+        /* Centered Content Box with Neon Blue Glow */
         .card {
             background-color: #24292e;
             padding: 40px 20px;
             border-radius: 12px;
             text-align: center;
+            width: 100%;
+            box-sizing: border-box;
             border: 2px solid #00f0ff; 
             box-shadow: 0 0 15px #00f0ff, 
                         0 0 30px rgba(0, 240, 255, 0.2), 
@@ -64,15 +69,20 @@
             font-size: 32px;
             letter-spacing: 0.5px;
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-            margin-bottom: 30px; /* Pushes the button cleanly below the text */
         }
 
-        /* Clickable Link Styling for Image Button */
+        /* Button Container positioned beneath the welcome box */
+        .button-area {
+            margin-top: 40px; 
+            text-align: center;
+        }
+
+        /* Clickable Link Styling for Speaker Button */
         .image-link-btn {
-            background-color: #ffffff; /* Gives the black speaker icon a clean white background container */
+            background-color: #ffffff; /* Gives the black speaker icon a clean white background background */
             border: 2px solid #0366d6;
             padding: 15px;
-            border-radius: 50%; /* Makes the button perfectly circular */
+            border-radius: 50%; /* Perfect circle */
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -83,7 +93,7 @@
         }
 
         .image-link-btn img {
-            width: 80px; /* Perfect size for a dashboard sound icon */
+            width: 80px; 
             height: 80px;
             display: block;
         }
@@ -220,14 +230,16 @@
 
     <!-- Page Body -->
     <div class="container">
+        <!-- Main Welcome Card Container -->
         <div class="card">
             <h1>Welcome to the Apex Files</h1>
-            
-            <!-- SPEAKER BUTTON LINK POINTING TO SOUNDBOARD -->
+        </div>
+        
+        <!-- BUTTON OUTSIDE AND BENEATH THE WELCOME BOX -->
+        <div class="button-area">
             <a href="soundboard.html" class="image-link-btn">
                 <img src="speaker.png" alt="Go to Sound Board">
             </a>
-            
         </div>
     </div>
 
