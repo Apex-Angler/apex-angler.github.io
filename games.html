@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Education Perfect</title>
+    <link rel="icon" type="image/png" href="Screenshot%202026-07-31%20080025.png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1c1e;
+            color: #f0f2f5;
+        }
+        nav {
+            background-color: #0d1117;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #0366d6;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0366d6;
+        }
+        .nav-links a {
+            color: #f0f2f5;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            color: #0366d6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background-color: #24292e;
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #00f0ff; 
+            box-shadow: 0 0 15px #00f0ff, 0 0 30px rgba(0, 240, 255, 0.2);
+        }
+        h1 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <nav>
+        <div class="logo">Apex Files</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+        </div>
+    </nav>
+
+    <!-- Page Body -->
+    <div class="container">
+        <div class="card">
+            <h1>Games</h1>
+            <!-- You can embed or build games here later! -->
+        </div>
+    </div>
+
+    <script>
+        // Security fallback: Redirects back to homepage if trying to bypass directly without inputting password
+        if (sessionStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>
