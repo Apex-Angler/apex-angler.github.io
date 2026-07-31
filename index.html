@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Angler</title>
+    
+    <!-- Changed browser tab title -->
+    <title>Education Perfect</title>
+    
+    <!-- Added your custom screenshot favicon link -->
+    <link rel="icon" type="image/png" href="Screenshot%202026-07-31%20080025.png">
+    
     <style>
         /* Base Page Styles */
         body {
@@ -65,9 +71,9 @@
 </head>
 <body>
 
-    <!-- Navigation Header -->
+    <!-- Navigation Header - Updated Logo Text -->
     <nav>
-        <div class="logo">Apex Angler</div>
+        <div class="logo">Education Perfect</div>
         <div class="nav-links">
             <a href="#">Home</a>
             <a href="#">About</a>
@@ -75,24 +81,26 @@
         </div>
     </nav>
 
-    <!-- Page Body -->
+    <!-- Page Body - Updated Heading Text -->
     <div class="container">
         <div class="card">
-            <h1>Welcome to Apex Angler</h1>
-            <p>This website is successfully customized and hosted live on GitHub Pages. Edit this paragraph to introduce your project, display your fishing logs, or showcase your portfolio.</p>
+            <h1>Welcome to Education Perfect</h1>
+            <p>This website is successfully customized and hosted live on GitHub Pages. Edit this paragraph to introduce your project, display your notes, or showcase your portfolio.</p>
         </div>
     </div>
 
+    <!-- Password Script - Placed cleanly at the bottom inside the body -->
+    <script>
+        // Set your password inside the quotation marks below
+        const password = "Fishing=awesome"; 
+        
+        let entry = prompt("Please enter the password to access Education Perfect:");
+        
+        if (entry !== password) {
+            alert("Incorrect password. Access denied.");
+            document.body.innerHTML = "<h1 style='color:white; text-align:center; margin-top:50px;'>Access Denied</h1>";
+        }
+    </script>
+
 </body>
 </html>
-<script>
-    // Set your password inside the quotation marks below
-    const password = "Fishing=awesome"; 
-    
-    let entry = prompt("Please enter the password to access Apex Angler:");
-    
-    if (entry !== password) {
-        alert("Incorrect password. Access denied.");
-        document.body.innerHTML = "<h1 style='color:white; text-align:center; margin-top:50px;'>Access Denied</h1>";
-    }
-</script>
