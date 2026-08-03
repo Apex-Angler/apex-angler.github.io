@@ -3,45 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Games Page</title>
+    <title>Games Page</title>
     <style>
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: sans-serif;
-            text-align: center;
+            background-color: #1a1c1e;
+            color: white;
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        h1 {
-            color: #00ffcc;
+
+        /* Top header container to match your exact layout alignment */
+        .top-bar {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 40px;
         }
-        iframe {
-            border: 3px solid #00ffcc;
-            background-color: #000000;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #00ffcc;
+
+        /* Back Button styled exactly like your image */
+        .back-btn {
+            background-color: #25282c;
+            color: #d1d5db;
             text-decoration: none;
-            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            border: 1px solid #374151;
+            transition: background 0.2s;
         }
-        .back-link:hover {
-            text-decoration: underline;
+        .back-btn:hover {
+            background-color: #31353b;
+        }
+
+        /* The main glowing box from your image */
+        .title-box {
+            width: 80%;
+            max-width: 800px;
+            border: 2px solid #00d2ff;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+            margin-bottom: 40px;
+        }
+
+        .title-box h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Your game window container sitting underneath the box */
+        .game-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        iframe {
+            border: 2px solid #374151;
+            background-color: #000000;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="back-link">← Back to Homepage</a>
+    <!-- Top navigation bar -->
+    <div class="top-bar">
+        <a href="index.html" class="back-btn">← Back</a>
+    </div>
 
-    <h1>My Arcade Room</h1>
-    <p>Play Car King Arena directly in the frame below:</p>
+    <!-- Your exact styled box with updated text -->
+    <div class="title-box">
+        <h1>Games</h1>
+    </div>
 
-    <!-- This embeds your specific game file perfectly -->
-    <iframe src="carkingarena.html" width="800" height="600"></iframe>
+    <!-- The actual game file loaded underneath the box -->
+    <div class="game-container">
+        <iframe src="carkingarena.html" width="800" height="600"></iframe>
+    </div>
 
 </body>
 </html>
