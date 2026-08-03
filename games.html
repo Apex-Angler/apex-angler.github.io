@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- This sets the tab text to look exactly like the screenshot -->
+    <!-- This sets the browser tab text to look like Education Perfect -->
     <title> - Education Perfect</title>
     
-    <!-- This grabs the official Education Perfect logo icon for your tab -->
+    <!-- This sets the browser tab logo to the Education Perfect icon -->
     <link rel="icon" type="image/x-icon" href="https://educationperfect.com">
-
+    
     <style>
         body {
-            background-color: #1a1c1e;
+            background-color: #161819;
             color: white;
             font-family: system-ui, -apple-system, sans-serif;
             margin: 0;
@@ -22,20 +22,20 @@
             align-items: center;
         }
 
-        /* Top navigation header matching your image */
+        /* Top navigation header bar */
         .navbar {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 40px;
+            padding: 18px 40px;
             box-sizing: border-box;
             border-bottom: 2px solid #0056b3; /* Dark blue accent line */
-            background-color: #1a1c1e;
+            background-color: #161819;
         }
 
         .navbar-brand {
-            color: #007bff; /* Bright blue brand text */
+            color: #3b82f6; /* Bright blue text for Apex Files */
             font-weight: bold;
             font-size: 18px;
             text-decoration: none;
@@ -52,36 +52,37 @@
             color: #00d2ff;
         }
 
-        /* Main layout layout container */
+        /* Main content layout */
         .content-container {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
             box-sizing: border-box;
         }
 
-        /* The main glowing box from your image */
+        /* The main glowing container box */
         .title-box {
             width: 80%;
             max-width: 800px;
+            background-color: #1f2326;
             border: 2px solid #00d2ff;
             border-radius: 12px;
             padding: 40px 20px;
             text-align: center;
             box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .title-box h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 700;
             letter-spacing: 0.5px;
         }
 
-        /* Game window container sitting cleanly underneath the box */
+        /* Hidden game container wrapper */
         .game-container {
             width: 100%;
             display: flex;
@@ -89,6 +90,7 @@
             margin-bottom: 40px;
         }
 
+        /* Clean game screen box sitting directly below the text box */
         iframe {
             border: 2px solid #374151;
             background-color: #000000;
@@ -99,7 +101,7 @@
 </head>
 <body>
 
-    <!-- Top Navigation Bar matching your header -->
+    <!-- Top Navigation Header -->
     <div class="navbar">
         <a href="index.html" class="navbar-brand">Apex Files</a>
         <div class="navbar-links">
@@ -108,15 +110,15 @@
         </div>
     </div>
 
-    <!-- Main Content Area -->
+    <!-- Main Page Body -->
     <div class="content-container">
         
-        <!-- Styled title box changing 'Sound Board' to 'Games' -->
+        <!-- Glowing title box displaying Games -->
         <div class="title-box">
             <h1>Games</h1>
         </div>
 
-        <!-- Your game loading container underneath the box -->
+        <!-- The actual game file loading space -->
         <div class="game-container">
             <iframe src="carkingarena.html" width="800" height="600"></iframe>
         </div>
