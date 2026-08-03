@@ -3,127 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- This sets the browser tab text to look like Education Perfect -->
-    <title> - Education Perfect</title>
-    
-    <!-- This sets the browser tab logo to the Education Perfect icon -->
-    <link rel="icon" type="image/x-icon" href="https://educationperfect.com">
-    
+    <title>Games - Education Perfect</title>
+    <link rel="icon" type="image/png" href="Screenshot%202026-07-31%20080025.png">
     <style>
         body {
-            background-color: #161819;
-            color: white;
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: #1a1c1e;
+            color: #f0f2f5;
         }
-
-        /* Top navigation header bar */
-        .navbar {
-            width: 100%;
+        nav {
+            background-color: #0d1117;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 40px;
-            box-sizing: border-box;
-            border-bottom: 2px solid #0056b3; /* Dark blue accent line */
-            background-color: #161819;
+            border-bottom: 2px solid #0366d6;
         }
-
-        .navbar-brand {
-            color: #3b82f6; /* Bright blue text for Apex Files */
+        .logo {
+            font-size: 24px;
             font-weight: bold;
-            font-size: 18px;
-            text-decoration: none;
+            color: #0366d6;
         }
-
-        .navbar-links a {
-            color: #ffffff;
+        .nav-links a {
+            color: #f0f2f5;
             text-decoration: none;
             margin-left: 20px;
-            font-size: 14px;
+            font-weight: 500;
         }
-
-        .navbar-links a:hover {
-            color: #00d2ff;
+        .nav-links a:hover {
+            color: #0366d6;
         }
-
-        /* Main content layout */
-        .content-container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 60px 20px;
-            box-sizing: border-box;
+        .container {
+            max-width: 900px;
+            margin: 120px auto;
+            padding: 0 20px;
         }
-
-        /* The main glowing container box */
-        .title-box {
-            width: 80%;
-            max-width: 800px;
-            background-color: #1f2326;
-            border: 2px solid #00d2ff;
+        .card {
+            background-color: #24292e;
+            padding: 50px 20px;
             border-radius: 12px;
-            padding: 40px 20px;
             text-align: center;
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
-            margin-bottom: 50px;
+            border: 2px solid #00f0ff; 
+            box-shadow: 0 0 15px #00f0ff, 
+                        0 0 30px rgba(0, 240, 255, 0.2), 
+                        inset 0 0 15px rgba(0, 240, 255, 0.1);
         }
-
-        .title-box h1 {
-            margin: 0;
-            font-size: 32px;
-            font-weight: 700;
+        h1 {
+            margin: 0 0 30px 0;
+            color: #ffffff;
+            font-size: 36px;
             letter-spacing: 0.5px;
         }
 
-        /* Hidden game container wrapper */
-        .game-container {
-            width: 100%;
+        /* Flex button layout panel styling group alignment row */
+        .btn-group {
             display: flex;
             justify-content: center;
-            margin-bottom: 40px;
+            gap: 20px; 
+            flex-wrap: wrap;
         }
 
-        /* Clean game screen box sitting directly below the text box */
-        iframe {
-            border: 2px solid #374151;
-            background-color: #000000;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .action-btn {
+            background-color: #21262d;
+            color: #c9d1d9;
+
+            text-decoration: none;
+            min-width: 80px;
         }
-    </style>
+
+        .action-btn:hover {
+            background-color: #30363d;
+            color: #ffffff;
+
 </head>
 <body>
 
-    <!-- Top Navigation Header -->
-    <div class="navbar">
-        <a href="index.html" class="navbar-brand">Apex Files</a>
-        <div class="navbar-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+    <!-- Navigation Header -->
+    <nav>
+        <div class="logo">Apex Files</div>
+        <div class="nav-links">
         </div>
-    </div>
+    </nav>
 
-    <!-- Main Page Body -->
-    <div class="content-container">
-        
-        <!-- Glowing title box displaying Games -->
-        <div class="title-box">
+    <!-- Page Body -->
+    <div class="container">
+        <div class="card">
             <h1>Games</h1>
-        </div>
 
-        <!-- The actual game file loading space -->
-        <div class="game-container">
-            <iframe src="carkingarena.html" width="800" height="600"></iframe>
+            <div class="btn-group">
+                <a href="online.html" class="action-btn">Online</a>
+                <a href="offline.html" class="action-btn">Offline</a>
+            </div>
+            
         </div>
-
     </div>
+
+    <script>
+        if (sessionStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "index.html";
+        }
+    </script>
 
 </body>
 </html>
