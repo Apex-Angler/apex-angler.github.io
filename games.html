@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Games Page</title>
     <style>
-        body { background-color: #222; color: white; text-align: center; font-family: sans-serif; }
-        iframe { border: 2px solid #00ffcc; background: white; margin-top: 20px; }
-        .back-btn { display: inline-block; margin-top: 20px; color: #00ffcc; text-decoration: none; }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #00ffcc;
+        }
+        iframe {
+            border: 3px solid #00ffcc;
+            background-color: #000000;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to My Games Page</h1>
-    <p>Play the game directly in the box below:</p>
+    <a href="index.html" class="back-link">← Back to Homepage</a>
 
-    <carkingarena.html>
-    <iframe src="your-file-name.html" width="800" height="600"></iframe>
+    <h1>My Arcade Room</h1>
+    <p>Play Car King Arena directly in the frame below:</p>
 
-    <br>
-    <a href="index.html" class="back-btn">← Back to Home</a>
+    <!-- This embeds your specific game file perfectly -->
+    <iframe src="carkingarena.html" width="800" height="600"></iframe>
 
 </body>
 </html>
